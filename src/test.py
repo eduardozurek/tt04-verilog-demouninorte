@@ -29,7 +29,9 @@ async def test_7seg(dut):
             dut.ui_in.value = i
             dut.uio_in.value = j
             await ClockCycles(dut.clk, max_count)
-            dut._log.info("check output {}".format(dut.uo_out.value))
+            dut._log.info("input bits       {}".format(dut.ui_in.value))
+            dut._log.info("input-ouput bits {}".format(dut.uio_in.value))
+            dut._log.info("check output     {}".format(dut.uo_out.value))
             #assert int(dut.segments.value) == segments[i % 10]
     # # reset
     # dut.rst_n.value = 0
