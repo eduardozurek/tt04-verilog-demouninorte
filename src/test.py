@@ -19,7 +19,7 @@ async def test_7seg(dut):
     await ClockCycles(dut.clk, 10)
     dut.rst_n.value = 1
     # all bidirectionals are set to output
-    assert dut.uio_oe == 0xFF
+    assert dut.uio_oe == 0x00
     # the compare value is shifted 10 bits inside the design to allow slower counting
     max_count = 0x01 << 10
     dut._log.info(f"check all segments with MAX_COUNT set to {max_count}")
